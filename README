@@ -1,0 +1,76 @@
+# Task Manager Application
+
+This repository contains a **Task Manager** application built using:
+
+- **Backend**: Spring Boot (Java)
+- **Frontend**: React (JavaScript)
+
+## Overview
+
+The application allows users to manage tasks. The backend provides a RESTful API to manage tasks, and the frontend allows users to interact with it through a simple user interface.
+
+## Getting Started
+
+Follow the steps below to set up and run both the backend and frontend in your local environment.
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Java 21+** (for the backend)
+- **Maven** (for building the backend)
+- **Node.js** and **npm** (for running the frontend React application)
+
+If you don’t have them installed, here are the installation links:
+- [Install Java](https://adoptopenjdk.net/)
+- [Install Node.js](https://nodejs.org/)
+- [Install Maven](https://maven.apache.org/install.html)
+
+### Step 1: Clone the Repository
+
+Start by cloning this repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+Step 2: Set Up the Backend and Frontend
+Navigate to the backend directory:
+cd backend
+Configure your application properties (if needed). Make sure to set up your database and other sensitive information in the src/main/resources/application.properties file. Example:
+spring.datasource.url=jdbc:postgresql://localhost:5432/taskmanager
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+Build and run the Spring Boot application using Maven:
+./mvnw spring-boot:run
+This will start the backend server on http://localhost:8080. The backend provides a REST API at http://localhost:8080/api/tasks for managing tasks.
+Navigate to the frontend directory:
+cd ../task-manager-frontend
+Install the required npm dependencies:
+npm install
+Start the React application:
+npm start
+This will start the frontend server on http://localhost:3000. The React app will automatically make API requests to the backend running on http://localhost:8080.
+Step 3: Open the Application
+Once both the backend and frontend servers are running, open your browser and go to:
+
+Backend: http://localhost:8080 (API server)
+Frontend: http://localhost:3000 (React app)
+You should be able to create and view tasks through the React interface.
+
+Step 4: Stopping the Servers
+To stop the backend server, press Ctrl+C in the terminal where the Spring Boot application is running.
+
+To stop the frontend server, press Ctrl+C in the terminal where the React app is running.
+
+Project Structure
+
+The project contains two main directories:
+
+backend: The Spring Boot backend application.
+task-manager-frontend: The React frontend application.
+Technologies Used
+
+Spring Boot (Backend)
+React (Frontend)
+Axios (for API calls from frontend to backend)
+Material-UI (UI components for the frontend)
