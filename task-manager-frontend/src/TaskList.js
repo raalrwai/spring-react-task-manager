@@ -5,7 +5,7 @@ const TaskList = () => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/tasks')
+        axios.get('http://localhost:8080/taskmanager/api/tasks')
             .then(response => setTasks(response.data))
             .catch(error => console.error("Error fetching tasks:", error));
     }, []);
