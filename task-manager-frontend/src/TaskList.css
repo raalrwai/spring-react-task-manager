@@ -1,0 +1,62 @@
+/* TaskList.css */
+
+/* Wrapper for the task list section */
+.task-list-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header styling for the task list */
+.task-list-container h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table styling */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header */
+.task-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.task-table th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table rows */
+.task-table tr {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table cells */
+.task-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Hover effect on table rows */
+.task-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Empty task message */
+.task-list-container p {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
