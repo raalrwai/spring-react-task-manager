@@ -27,30 +27,27 @@ const App = () => {
 
     // This function is passed to TaskForm to update the task list after adding a new task
     const onTaskAdded = (newTask) => {
-        // You could either append the new task directly to the state
         setTasks((prevTasks) => [...prevTasks, newTask]);
-
-        // Or re-fetch tasks from the backend (if the task list needs to be synchronized)
-        // fetchTasks();
-
-        // Hide the TaskForm after submission
-        setIsTaskFormVisible(false);
+        setIsTaskFormVisible(false); // Hide TaskForm after submission
     };
 
     return (
         <div className="app-container">
             <header className="app-header">
-                <h1>Task Manager</h1>
-                <p className="app-description">Organize your tasks efficiently!</p>
+                <div className="header-content">
+                    <h1 className="app-title">Task Manager</h1>
+                    <p className="app-description">Organize your tasks efficiently and effectively!</p>
+                </div>
             </header>
             
-            <div className="main-content">
-                <div className="task-list-container">
-                    {/* New Task button positioned at the top left */}
+            <div className="dashboard-container">
+                <aside className="sidebar">
                     <button className="new-task-btn" onClick={toggleTaskForm}>
-                        {isTaskFormVisible ? 'Hide Task Form' : 'New Task'}
+                        {isTaskFormVisible ? 'Close Task Form' : 'New Task'}
                     </button>
-
+                </aside>
+                
+                <main className="main-content">
                     {/* Conditionally render TaskForm above TaskList */}
                     {isTaskFormVisible && (
                         <div className="task-form-overlay">
@@ -60,7 +57,7 @@ const App = () => {
 
                     {/* TaskList will show updated tasks */}
                     <TaskList tasks={tasks} />
-                </div>
+                </main>
             </div>
         </div>
     );
