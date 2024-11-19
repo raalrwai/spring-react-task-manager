@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './TaskForm.css'; 
 
-
-const TaskForm = () => {
+const TaskForm = ({ onTaskAdded }) => {
     // State variables
     const [task, setTask] = useState({ title: '', description: '', dueDate: '', status: 'TO_DO' });
     const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -35,6 +34,9 @@ const TaskForm = () => {
                 console.log('Task created:', response);
                 resetForm();
                 showSnackbar('Task created successfully!', 'success');
+
+                // Pass the newly created task back to App.js
+                onTaskAdded(response.data); // Update the task list in App.js
             })
             .catch((error) => {
                 console.error('Error creating task:', error.response || error);
